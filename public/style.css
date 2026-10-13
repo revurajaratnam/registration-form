@@ -1,0 +1,191 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 16px;
+  font-family: Arial, sans-serif;
+  color: #1e293b;
+
+  background:
+    radial-gradient(circle at 10% 10%,
+      #bfdbfe 0, transparent 30%),
+    radial-gradient(circle at 90% 90%,
+      #ddd6fe 0, transparent 30%),
+    linear-gradient(135deg, #eef2ff, #f8fafc);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  color: #1d4ed8;
+}
+
+.page-header p,
+.hint {
+  color: #64748b;
+}
+
+section {
+  margin-bottom: 28px;
+}
+
+h2 {
+  font-size: 19px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: #fff;
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center-field {
+  grid-column: 1 / -1;
+  width: calc(50% - 10px);
+  justify-self: center;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.hint {
+  font-size: 13px;
+}
+
+.actions,
+.records-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 16px;
+  background: #2563eb;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.92);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+button.secondary {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+#message {
+  min-height: 22px;
+  font-weight: 600;
+}
+
+.records-section {
+  margin-top: 35px;
+}
+
+.record {
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+  overflow-wrap: anywhere;
+}
+
+.record p {
+  margin: 7px 0;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.file-link {
+  margin-right: 12px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .center-field,
+  .full-width {
+    grid-column: auto;
+    width: 100%;
+  }
+}

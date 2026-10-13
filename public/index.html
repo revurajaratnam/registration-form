@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="hello.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Registration Form</h1>
+      <p>Enter your personal, contact and educational details.</p>
+    </header>
+
+    <form id="userForm" enctype="multipart/form-data">
+      <input type="hidden" name="recordId" id="recordId">
+
+      <section>
+        <h2>Personal Information</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="fname">First Name *</label>
+            <input id="fname" name="fname" required>
+          </div>
+
+          <div class="field">
+            <label for="lname">Last Name *</label>
+            <input id="lname" name="lname" required>
+          </div>
+
+          <div class="field">
+            <label for="dob">Date of Birth</label>
+            <input id="dob" name="dob" type="date">
+          </div>
+
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="">Select gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="field center-field">
+            <label for="nationality">Nationality</label>
+            <input id="nationality" name="nationality">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Contact Information</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+
+          <div class="field full-width">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Educational Information</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="qualification">Qualification</label>
+            <input id="qualification" name="qualification">
+          </div>
+
+          <div class="field">
+            <label for="college">College / University</label>
+            <input id="college" name="college">
+          </div>
+
+          <div class="field">
+            <label for="year">Passing Year</label>
+            <input id="year" name="year" type="number"
+                   min="1950" max="2100">
+          </div>
+
+          <div class="field">
+            <label for="percentage">Percentage / CGPA</label>
+            <input id="percentage" name="percentage">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Document Uploads</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="photo">Photo (JPG/PNG)</label>
+            <input id="photo" name="photo" type="file"
+                   accept="image/jpeg,image/png">
+          </div>
+
+          <div class="field">
+            <label for="signature">Signature (JPG/PNG)</label>
+            <input id="signature" name="signature" type="file"
+                   accept="image/jpeg,image/png">
+          </div>
+        </div>
+        <p class="hint">Maximum 2 MB per file.</p>
+      </section>
+
+      <div class="actions">
+        <button type="submit" id="submitBtn">Save Details</button>
+        <button type="button" id="cancelBtn" class="secondary" hidden>
+          Cancel Edit
+        </button>
+        <button type="reset" class="secondary">Clear Form</button>
+      </div>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <section class="records-section">
+      <div class="records-heading">
+        <h2>Saved Records</h2>
+        <button type="button" id="refreshBtn" class="secondary">
+          Refresh
+        </button>
+      </div>
+      <div id="records">
+        Loading records...
+      </div>
+    </section>
+  </main>
+</body>
+</html>
